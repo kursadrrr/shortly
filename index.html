@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <title>Shortly — compact links</title>
+    <style>
+      :root {
+        --ink: #111111;
+        --paper: #f3f0e8;
+        --acid: #d8ff3e;
+        --orange: #ff6b35;
+        --line: rgba(17, 17, 17, .2);
+      }
+
+      * { box-sizing: border-box; }
+      html { background: var(--paper); }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        background:
+          linear-gradient(135deg, rgba(255, 107, 53, .12), transparent 34%),
+          repeating-linear-gradient(0deg, transparent 0 47px, rgba(17,17,17,.055) 48px),
+          var(--paper);
+        font-family: Georgia, 'Times New Roman', serif;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 34px 0 58px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font: 700 13px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      .mark::before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--orange);
+        box-shadow: 6px 0 0 var(--acid);
+      }
+
+      .status {
+        font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+        opacity: .62;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: clamp(42px, 9vw, 132px);
+        align-items: end;
+        padding: clamp(82px, 15vh, 160px) 0 96px;
+      }
+
+      h1 {
+        max-width: 700px;
+        margin: 0;
+        font-size: clamp(68px, 12vw, 156px);
+        font-weight: 400;
+        line-height: .82;
+        letter-spacing: -.075em;
+      }
+
+      h1 em {
+        display: block;
+        color: var(--orange);
+        font-style: italic;
+      }
+
+      .intro {
+        max-width: 330px;
+        margin: 0 0 8px;
+        font-size: clamp(20px, 2.4vw, 29px);
+        line-height: 1.08;
+        letter-spacing: -.035em;
+      }
+
+      .intro small {
+        display: block;
+        margin-top: 24px;
+        font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: .02em;
+        opacity: .65;
+      }
+
+      .test-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 13px;
+        margin-top: 38px;
+        padding: 15px 18px;
+        color: var(--ink);
+        background: var(--acid);
+        border: 1px solid var(--ink);
+        box-shadow: 5px 5px 0 var(--ink);
+        font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+        text-decoration: none;
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+
+      .test-link:hover {
+        transform: translate(3px, 3px);
+        box-shadow: 2px 2px 0 var(--ink);
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        font: 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        opacity: .64;
+      }
+
+      @media (max-width: 700px) {
+        .shell { width: min(100% - 32px, 560px); padding-top: 22px; }
+        .status { display: none; }
+        main { display: block; padding: 100px 0 130px; }
+        .intro { margin-top: 58px; }
+        footer { display: block; }
+        footer span + span { display: block; margin-top: 8px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="mark">Shortly</div>
+        <div class="status">link routing / v0.1</div>
+      </header>
+
+      <main>
+        <h1>Less link.<em>More reach.</em></h1>
+        <div class="intro">
+          A tiny home for compact, memorable URLs.
+          <small>// github pages powered<br>// currently in test mode</small>
+          <a class="test-link" href="./google/">OPEN TEST LINK <span aria-hidden="true">↗</span></a>
+        </div>
+      </main>
+
+      <footer>
+        <span>SHORTLY / KURSADRRR</span>
+        <span>New destinations will appear here soon.</span>
+      </footer>
+    </div>
+  </body>
+</html>
