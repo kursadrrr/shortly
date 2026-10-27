@@ -5,6 +5,7 @@ Small, static link shortener hosted on GitHub Pages.
 ## Test link
 
 - `/google/` redirects to `https://0faiz02026.com/`
+- `/go/` is the cache-busted short alias for the same destination.
 
 ## Adding a link
 
